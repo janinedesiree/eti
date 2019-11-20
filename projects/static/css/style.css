@@ -1,0 +1,16 @@
+hr{
+  margin-top: -15px !important;
+}
+
+.intro{
+  padding: 8px 20px;
+}
+
+.intro p{
+  line-height: 15px;
+  margin: 15px 20px;
+}
+.intro span{
+  font-style: italic;
+  font-weight: bold;
+}

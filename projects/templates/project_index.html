@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<hr>
+<div class="row">
+  <div class="intro">
+
+    <h1>Hello! 😄</h1>
+    Currently in my final year of pursuing a diploma in IT @ Ngee Ann Polytechnic. <br><br>
+    <span>Couple of fun facts:</span>
+    <p>💉I'm deeply interested in the medical industry (med+tech = !!!),</p>
+    <p>☕️I really like coffee,</p>
+    <p>🇫🇷et je peux parler un peu français!</p> <br />
+    Click <a href="{% static "files/resume.pdf" %}">here</a> to view my resume!
+  </div>
+</div>
+<div class="row">
+{% for project in projects %}
+    <div class="col-md-4">
+
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
