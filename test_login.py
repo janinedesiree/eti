@@ -16,6 +16,7 @@ def test_wrong_password():
     password.send_keys(Keys.RETURN)
     assert "Please enter the correct username and password for a staff account. Note that both fields may be case-sensitive." in driver.page_source
 
+#UPDATE! - Tried using parameters, improved cov ~
 @pytest.mark.parametrize("a, b", [
 ("janinedesiree", "T!t@nia_"),
 ("limwanning", "T!t@nia_"),
