@@ -51,3 +51,4 @@ def test_create_new_user_password_requirements_unmet(a,b):
     newpass2.send_keys("b")
     driver.find_element_by_name("_save").click()
     assert "Please correct the error below." in driver.page_source
+    
