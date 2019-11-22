@@ -3,8 +3,8 @@ from blog.models import Category, Post
 
 # Create your tests here.
 class BlogTest(TestCase):
-
-    #Test whether created Category object's title matches expected title
+    #MODELS
+    #Test whether created Category object's name matches expected name
     def create_category(self, name="Janine Desiree"):
         return Category.objects.create(name=name)
 
@@ -13,11 +13,11 @@ class BlogTest(TestCase):
         self.assertTrue(isinstance(c, Category))
         self.assertEqual(c.__str__(), c.name)
 
-    #Test whether the name set is what will be displayed
-    def test_category_representation(self):
-        category = Category(name="My category title")
-        self.assertEqual(str(category), category.name)
+    #Test whether created Post object's title matches expected title
+    def create_post(self, title="je ne sais pas"):
+        return Post.objects.create(title=title)
 
-    def test_post_title_representation(self):
-        post = Post(title="My category title")
-        self.assertEqual(str(post), post.title)
+    def test_post_creation(self):
+        p = self.create_post()
+        self.assertTrue(isinstance(p, Post))
+        self.assertEqual(p.__str__(), p.title)
