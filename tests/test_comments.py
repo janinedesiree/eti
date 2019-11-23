@@ -24,12 +24,12 @@ def test_create_comment_valid():
 
 def test_invalid_author_blank():
     comment_input("", "no author")
-    assert "no author" in driver.page_source
+    assert "Fill in the fields" in driver.page_source
 
 def test_invalid_body_blank():
     comment_input("no body", "")
-    assert "no author" in driver.page_source
+    assert "Fill in the fields" in driver.page_source
 
 def test_invalid_all_blank():
     comment_input("", "")
-    assert "no author" in driver.page_source
+    assert "Fill in the fields" in driver.page_source
