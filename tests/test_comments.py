@@ -33,3 +33,4 @@ def test_invalid_body_blank():
 def test_invalid_all_blank():
     comment_input("", "")
     assert "Fill in the fields" in driver.page_source
+    driver.close()

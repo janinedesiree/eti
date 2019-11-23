@@ -71,7 +71,6 @@ def test_password_case():
 @pytest.mark.parametrize("a, b", [
 ("janinedesiree", "T!t@nia_"),
 ("limwanning", "T!t@nia_"),
-("galeellamae", "T!t@nia_"),
 ])
 def test_correct_username_password(a,b):
     driver.get("http://localhost:8000/admin/logout/")
