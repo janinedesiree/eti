@@ -1,20 +1,21 @@
-from django.test import TestCase
-from blog.apps import BlogConfig
-from blog.models import Category, Post, Comment
-
-from projects.apps import ProjectsConfig
-from projects.models import Project
-
+import django
+django.setup()
+import os
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
+import pytest
 import time
 import datetime
+from django.test import TestCase
 
 from django.test import Client
 from django.urls import reverse
-from django.core.exceptions import ObjectDoesNotExist
 
-# Create your tests here.
+from blog.apps import BlogConfig
+from blog.models import Category, Post, Comment
+
 class BlogTest(TestCase):
-    #MODELS
     #Test whether created Category object's name matches expected name
     def create_category(self, name="Janine Desiree"):
         return Category.objects.create(name=name)
@@ -33,18 +34,18 @@ class BlogTest(TestCase):
         self.assertTrue(isinstance(p, Post))
         self.assertEqual(p.__str__(), p.title)
 
-class PostTest(TestCase):
+class PostCommentTest(TestCase):
     def create_new_post():
-        post = Post(title='Valid Post',
-                body='An actual valid post',
+        post = Post(title="Creating a valid post!! :D",
+                body="Hello, I am Janine Desiree, testing this out!",
                 created_on=datetime.datetime.now(),
                 last_modified=datetime.datetime.now())
-        comment = Comment(author='Test Author',
-                          body='A test comment! You\'re so cooL!',
+        comment = Comment(author="Sample Author :)",
+                          body="This post is on FIREEEEE",
                           created_on=datetime.datetime.now())
         comment.post = post
         post.save()
-        category = Category(name="TestCategory")
+        category = Category(name="Test Category")
         category.save()
         post.categories.add(category)
         post.save()

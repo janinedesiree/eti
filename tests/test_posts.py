@@ -33,12 +33,14 @@ def post_input(title, body, index):
     return True
 
 #####TESTS#####
+##4.0.0 - Test that user is able to create a new post with valid parameters
 def test_create_valid_post():
     login("janinedesiree", "T!t@nia_")
     post_input("Test Post 1", "J'adore manger.", 1)
     assert "success" in driver.page_source
 
 #####Creating a new post
+##4.0.1 - Test that user is unable to create a new post with title already in use
 def test_invalid_title_exists():
     login("janinedesiree", "T!t@nia_")
     post_input("Test Post 1", "J'adore manger.", 1)
