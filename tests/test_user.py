@@ -202,7 +202,7 @@ def test_valid_change_password():
 ##2.2.0 - Test that user is able to update delete an existing user
 def test_delete_user():
     driver.get("http://localhost:8000/admin/auth/user/")
-    driver.find_element_by_link_text('UpdatedUser02').click()
+    driver.find_element_by_link_text('UpdatedUser03').click()
     driver.find_element(By.XPATH, '//*[@id="user_form"]/div/div/p/a').click()
     driver.find_element(By.XPATH, '//*[@id="content"]/form/div/input[2]').click()
     assert "deleted" in driver.page_source
